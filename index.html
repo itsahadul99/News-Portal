@@ -2,27 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Portal</title>
-    <!-- daisy ui cdn link here -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- google font link here -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- tailwind custom css -->
-    <style>
-        .font-roboto{
-            font-family: "Roboto";
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Portal</title>
+  <!-- daisy ui cdn link here -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- google font link here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- tailwind custom css -->
+  <style>
+    .font-roboto {
+      font-family: "Roboto";
+    }
+  </style>
 </head>
 
-<body class="font-roboto">
-    <h1 class="text-5xl">Testing .... </h1>
-    <script src="app.js"></script>
+<body class="font-roboto bg-[#F6F6F6]">
+  <header class="container mx-auto py-5 lg:py-10 px-5 lg:px-10">
+    <nav class="border-b-2">
+      <div class="navbar  mb-5">
+        <div class="navbar-start space-x-5">
+          <button class="px-3 py-2 bg-[#5d5fda] text-white rounded-lg hover:bg-blue-300">News</button>
+          <p class="text-lg font-bold text-[#5D5FEF]">Portal</p>
+        </div>
+        <div class="navbar-end space-x-5">
+          <a href="#" class="text-lg font-medium underline text-[#5D5FEF]">News</a>
+          <a href="#" class="text-lg font-medium text-[#5D5FEF]">Blog</a>
+          <div>
+            <img src="./images/Avatar.png" alt="">
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="btn-container" class="text-center mt-5 text-[#858585] text-lg">
+      <div class="space-x-16">
+        <button class="hover:bg-blue-200 px-2 py-1 rounded-lg">Home</button>
+        <button>Home</button>
+        <button>Home</button>
+        <button>Home</button>
+        <button>Home</button>
+        <button>Home</button>
+        <button>Home</button>
+        <button>Home</button>
+        <button>Home</button>
+      </div>
+    </div>
+    <div class="w-full px-20 py-5">
+      <input class="w-full p-5 rounded-lg text-black border-none font-bold" type="text" placeholder="Category result">
+    </div>
+  </header>
+  <main class="container mx-auto py-5 lg:py-10 px-5 lg:px-10">
+    <section class="mb-10">
+      <div class="bg-white p-5 rounded-lg shadow-md">
+        <div class="flex gap-10 items-center ">
+          <div><img src="./images/unsplash_EhTcC9sYXsw.png" alt=""></div>
+          <div>
+            <h1 class="text-2xl text-black font-bold">The best fashion influencers to follow for sartorial inspiration
+            </h1>
+            <p class="text-sm text-[#949494] mt-5">From our favourite UK influencers to the best missives from Milan and
+              the coolest New Yorkers, read on some of the best fashion blogs out there, and for even more inspiration,
+              do head to our separate black fashion influencer round-up.
+
+              <br> <br>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est in repudiandae laboriosam labore illum
+              expedita delectus reprehenderit modi consequatur debitis.
+            </p>
+            <div class="flex justify-around items-center mt-16">
+              <div class="flex gap-5">
+                <div>
+                  <img src="./images/Avatar.png" alt="">
+                </div>
+                <div>
+                  <h3 class="text-[#2B2C34] font-bold">Jane Cooper</h3>
+                  <p class="capitalize text-[#718797] text-sm">birth date</p>
+                </div>
+              </div>
+              <div class="flex gap-5">
+                <div>
+                  <img src="/images/carbon_view.png" alt="">
+                </div>
+                <div class="text-[#515151] text-lg font-bold">
+                  <h1>1.5 M</h1>
+                </div>
+              </div>
+              <div class="flex">
+                <img src="./images/bxs_star-half.png" alt="">
+                <img src="./images/bxs_star-half.png" alt="">
+                <img src="./images/bxs_star-half.png" alt="">
+                <img src="./images/bxs_star-half.png" alt="">
+                <img src="./images/bxs_star-half.png" alt="">
+              </div>
+              <div>
+                <img src="./images/bi_arrow-right-short.png" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="text-center py-8 text-[#949494] font-bold text-xl bg-[#fff]">
+    <h3>Copyright 2021 News Portal</h3>
+  </footer>
+  <script src="app.js"></script>
 </body>
 
 </html>
