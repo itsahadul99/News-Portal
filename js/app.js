@@ -1,13 +1,14 @@
-
+const emptyContainer = document.getElementById('empty-btn-container');
 const allBtnContainer = document.getElementById('btn-container');
 const newsContainer = document.getElementById('news-container');
+const spinnerContainer = document.getElementById('spinner-container');
 const loadCategories =async () =>{
     const res = await fetch('https://openapi.programming-hero.com/api/news/categories');
     const data = await res.json();
     data.data.news_category.forEach(item => {
-        
+      spinner(true);
         const btn = document.createElement('button');
-        btn.innerHTML = `<button onclick ="loadCategoryId('${item.category_id}')" class="hover:bg-blue-200 px-2 py-1 rounded-lg">${item.category_name}</button>`
+        btn.innerHTML = `<button id = 'new-btn' onclick ="loadCategoryId('${item.category_id}')" class="hover:bg-blue-200 px-2 py-1 rounded-lg">${item.category_name}</button>`
         allBtnContainer.appendChild(btn);
     });
 }
@@ -15,11 +16,21 @@ const loadCategoryId =async (id="05") => {
     const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${id}`);
     const data = await res.json();
     newsContainer.innerHTML = '';
+    spinner(false)
+    // input field text
     let text = `${data.data.length} items found`
     const inputField = document.getElementById('input-field');
+    // clear input field text 
     inputField.value = '';
+    if(id === '06'){
+      emptyContainer.classList.remove('hidden')
+    }else{
+      emptyContainer.classList.add('hidden')
+    }
+    // looping into data
     data.data.forEach((item) =>{
-        // console.log(item);
+        console.log(item);
+        // set the input field text
         inputField.value = `${text}`
         const div = document.createElement('div');
         div.className = `flex gap-10 items-center space-y-5 bg-white p-5 rounded-lg shadow-md`
@@ -66,6 +77,14 @@ const loadCategoryId =async (id="05") => {
         `
         newsContainer.appendChild(div);
     })
+}
+const spinner = (isSpinner) => {
+  const spinnerContainer = document.getElementById('spinner-container');
+  if(isSpinner){
+      spinnerContainer.classList.remove('hidden')
+  }else{
+      spinnerContainer.classList.add('hidden');
+  }
 }
 loadCategoryId()
 loadCategories()
